@@ -1,36 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Todo app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Todo
-
-  <!-- Add dynamic number --> items left
-
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="./images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body class="box-border bg-lg-gray dark:bg-v-dk-desat-blue h-screen grid grid-rows-3 grid-cols-1">
+    <div
+      class="bg-hero-mobile-light sm:bg-hero-desktop-light dark:bg-hero-mobile-dark dark:sm:bg-hero-desktop-dark bg-cover sm:grid sm:grid-cols-4 sm:grid-rows-1"
+    >
+      <div class="sm:col-start-2 sm:col-end-4">
+        <div class="flex justify-between items-center p-8 sm:px-0">
+          <h1 class="text-white font-bold tracking-[0.3em] text-3xl">TODO</h1>
+          <div class="bg-[url('images/icon-moon.svg')] dark:bg-[url('images/icon-sun.svg')] bg-cover h-6 w-6" id="themeChanger"></div>
+          <!-- <img src="./images/icon-moon.svg" alt="theme-icon" id="themeChanger" /> -->
+        </div>
+        <div class="bg-white dark:bg-v-dk-grayish-blue m-8 mt-0 px-4 py-2 rounded-lg sm:mx-0 flex justify-between align-middle">
+          <div
+            class="w-10 border-2 border-gray-200 rounded-full p-2"
+          ></div>
+          <input
+            type="text"
+            name="new-item"
+            id="enterTodo"
+            placeholder="Create a new todo..."
+            class="w-10/12 sm:w-[90%] h-10 focus:outline-none dark:bg-v-dk-grayish-blue text-lg-grayish-blue"     
+          />
+        </div> 
+      </div>
+    </div>
+    <div id="itemsCard" class="row-span-2 m-8 -mt-12 invisible sm:m-0 sm:col-span-2 sm:-mt-20 sm:grid sm:grid-cols-4 sm:grid-rows-1">
+      <div class="sm:col-start-2 col-end-4">
+        <div class="bg-white dark:bg-v-dk-grayish-blue rounded-lg shadow-lg">
+          <div id="todoList" class="px-4 cursor-pointer dark:text-lg-grayish-blue">
+          </div>
+          <hr />
+          <div class="p-4 flex justify-between text-dk-gray">
+            <a><span id="itemsDone">0</span> items left</a>
+            <div class="hidden sm:flex font-bold">
+                <a class="mx-2">All</a>
+                <a class="mx-2">Active</a>
+                <a class="mx-2">Completed</a>
+            </div>
+            <a>Clear Completed</a>
+          </div>
+        </div>
+        <div
+          class="sm:hidden rounded-lg bg-white dark:bg-v-dk-grayish-blue text-dk-gray my-8 shadow-md flex justify-center p-4">
+          <a class="mx-2">All</a>
+          <a class="mx-2">Active</a>
+          <a class="mx-2">Completed</a>
+        </div>
+        <div class="text-center text-dk-gray sm:m-8">
+          Drag and drop to reorder list
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>
